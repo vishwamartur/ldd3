@@ -511,7 +511,7 @@ static int __init tiny_init(void)
 	int i;
 
 	/* allocate the tty driver */
-	tiny_tty_driver = alloc_tty_driver(TINY_TTY_MINORS);
+	tiny_tty_driver = put_tty_driver(TINY_TTY_MINORS);
 	if (!tiny_tty_driver)
 		return -ENOMEM;
 
