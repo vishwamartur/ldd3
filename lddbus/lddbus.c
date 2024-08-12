@@ -77,7 +77,7 @@ struct bus_type ldd_bus_type = {
 /*
  * Export a simple attribute.
  */
-static ssize_t version_show(struct bus_type *bus, char *buf)
+static ssize_t version_show(const struct bus_type *bus, char *buf) 
 {
 	return snprintf(buf, PAGE_SIZE, "%s\n", Version);
 }
@@ -91,7 +91,7 @@ static BUS_ATTR_RO(version);
  */
 
 /*
- * For now, no references to LDDbus devices go out which are not
+ * For now, there are no references to LDDbus devices that are not
  * tracked via the module reference count, so we use a no-op
  * release function.
  */
